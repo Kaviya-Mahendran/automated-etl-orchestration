@@ -1,0 +1,58 @@
+2026-01-21 23:50:14,680 | INFO | ETL pipeline started
+2026-01-21 23:50:14,680 | INFO | Starting data extraction
+2026-01-21 23:50:14,680 | ERROR | Raw data file not found: data/raw/sample_raw_data.csv
+2026-01-21 23:50:14,680 | ERROR | ETL pipeline failed
+Traceback (most recent call last):
+  File "/Users/kaviyamahendran/Documents/GitHub/automated-etl-orchestration/scripts/pipeline.py", line 57, in run_pipeline
+    raw_df = extract_raw_data(RAW_DATA_PATH)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kaviyamahendran/Documents/GitHub/automated-etl-orchestration/scripts/extract.py", line 30, in extract_raw_data
+    raise FileNotFoundError(f"Missing raw data file: {raw_data_path}")
+FileNotFoundError: Missing raw data file: data/raw/sample_raw_data.csv
+2026-01-21 23:50:14,681 | INFO | Run metadata written to outputs/run_metadata.json
+2026-01-21 23:50:14,681 | INFO | Pipeline duration: 0.0 seconds
+2026-01-21 23:55:32,729 | INFO | ETL pipeline started
+2026-01-21 23:55:32,729 | INFO | Starting data extraction
+2026-01-21 23:55:32,738 | ERROR | ETL pipeline failed
+Traceback (most recent call last):
+  File "/Users/kaviyamahendran/Documents/GitHub/automated-etl-orchestration/scripts/pipeline.py", line 57, in run_pipeline
+    raw_df = extract_raw_data(RAW_DATA_PATH)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kaviyamahendran/Documents/GitHub/automated-etl-orchestration/scripts/extract.py", line 32, in extract_raw_data
+    df = pd.read_csv(raw_data_path)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.11/site-packages/pandas/io/parsers/readers.py", line 1026, in read_csv
+    return _read(filepath_or_buffer, kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.11/site-packages/pandas/io/parsers/readers.py", line 626, in _read
+    return parser.read(nrows)
+           ^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.11/site-packages/pandas/io/parsers/readers.py", line 1923, in read
+    ) = self._engine.read(  # type: ignore[attr-defined]
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.11/site-packages/pandas/io/parsers/c_parser_wrapper.py", line 234, in read
+    chunks = self._reader.read_low_memory(nrows)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "pandas/_libs/parsers.pyx", line 838, in pandas._libs.parsers.TextReader.read_low_memory
+  File "pandas/_libs/parsers.pyx", line 905, in pandas._libs.parsers.TextReader._read_rows
+  File "pandas/_libs/parsers.pyx", line 874, in pandas._libs.parsers.TextReader._tokenize_rows
+  File "pandas/_libs/parsers.pyx", line 891, in pandas._libs.parsers.TextReader._check_tokenize_status
+  File "pandas/_libs/parsers.pyx", line 2061, in pandas._libs.parsers.raise_parser_error
+pandas.errors.ParserError: Error tokenizing data. C error: Expected 9 fields in line 19, saw 17
+
+2026-01-21 23:55:32,741 | INFO | Run metadata written to outputs/run_metadata.json
+2026-01-21 23:55:32,741 | INFO | Pipeline duration: 0.01 seconds
+2026-01-22 00:01:29,617 | INFO | ETL pipeline started
+2026-01-22 00:01:29,617 | INFO | Starting data extraction
+2026-01-22 00:01:29,629 | INFO | Raw rows extracted: 130
+2026-01-22 00:01:29,629 | INFO | Schema validation passed
+2026-01-22 00:01:29,630 | INFO | Starting data transformation
+2026-01-22 00:01:29,646 | INFO | Transformation completed. Output rows: 130
+2026-01-22 00:01:29,646 | INFO | Starting load step
+2026-01-22 00:01:29,646 | INFO | Rows to load: 130
+2026-01-22 00:01:29,650 | INFO | Cleaned data written to data/cleaned/cleaned_data.csv
+2026-01-22 00:01:29,651 | INFO | Transformed data written to data/transformed/analytics_ready_data.csv
+2026-01-22 00:01:29,651 | INFO | Load step completed successfully
+2026-01-22 00:01:29,651 | INFO | ETL pipeline completed successfully
+2026-01-22 00:01:29,652 | INFO | Run metadata written to outputs/run_metadata.json
+2026-01-22 00:01:29,652 | INFO | Pipeline duration: 0.03 seconds
