@@ -1,5 +1,6 @@
-Automated ETL Orchestration Pipeline
-Overview
+**Automated ETL Orchestration Pipeline**
+
+**Overview**
 
 Data teams often rely on manual scripts or ad hoc processes to move data from raw sources into analytics ready formats. Over time, these approaches become fragile, hard to debug, and difficult to scale.
 
@@ -9,7 +10,7 @@ The pipeline is intentionally built using plain Python to clearly expose orchest
 
 Although implementations vary across organisations, these principles apply broadly to most data analytics environments.
 
-System Architecture
+**System Architecture**
 
 At a high level, the system consists of:
 
@@ -25,7 +26,7 @@ This separation ensures that each concern is isolated, testable, and extensible.
 
 Pipeline Workflow
 
-The ETL process follows a clear and repeatable flow:
+**The ETL process follows a clear and repeatable flow:**
 
 1. Extract
 
@@ -62,7 +63,7 @@ A run metadata file capturing execution status, row counts, and duration
 
 This makes pipeline behaviour transparent and debuggable over time.
 
-Why This Matters
+**Why This Matters**
 
 Reliable analytics depend on reliable data pipelines. This architecture demonstrates how even small data teams can move away from manual processing toward repeatable, automated systems.
 
@@ -84,7 +85,7 @@ Building this pipeline reinforced the importance of treating analytics workflows
 
 Future enhancements could include retry logic, incremental processing, backfills, or migration to orchestration frameworks such as Airflow or Prefect as data volume and complexity grow.
 
-How to Run
+**How to Run**
 
 Install dependencies:
 
