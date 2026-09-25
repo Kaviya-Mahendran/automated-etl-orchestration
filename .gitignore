@@ -34,3 +34,7 @@ Thumbs.db
 # Generated temporary outputs
 *.tmp
 *.temp
+
+# ETL runtime artefacts
+logs/
+outputs/run_metadata.json
